@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+
+/bin/
+/build/
+*.exe
+*.test
+*.out
+
+.idea/
+.vscode/
+
+.DB_Store
+Thumbs.db
