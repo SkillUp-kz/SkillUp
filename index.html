@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   SkillUp — Your career, upgraded
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="shell">
+   <aside class="sidebar">
+    <div class="logo">
+     skillup
+     <b>
+      .
+     </b>
+    </div>
+    <div class="navgroup">
+     WORKSPACE
+    </div>
+    <nav>
+     <button class="nav active" data-page="dashboard">
+      <span class="ico">
+       ◫
+      </span>
+      Overview
+     </button>
+     <button class="nav" data-page="jobs">
+      <span class="ico">
+       ⌕
+      </span>
+      Find jobs
+     </button>
+     <button class="nav" data-page="tracker">
+      <span class="ico">
+       ▤
+      </span>
+      Applications
+     </button>
+     <button class="nav" data-page="skills">
+      <span class="ico">
+       ◈
+      </span>
+      Skill insights
+     </button>
+     <button class="nav" data-page="interview">
+      <span class="ico">
+       ✧
+      </span>
+      Interview practice
+     </button>
+     <button class="nav" data-page="profile">
+      <span class="ico">
+       ♙
+      </span>
+      My profile
+     </button>
+    </nav>
+    <div class="sidebottom">
+     <div class="upgrade">
+      <strong>
+       ✦ Unlock your potential
+      </strong>
+      <p>
+       Career planning made smarter. Grow one step at a time.
+      </p>
+      <button onclick="navigate('skills')">
+       Explore insights ↗
+      </button>
+     </div>
+     <div class="account">
+      <div class="avatar">
+       DT
+      </div>
+      <div>
+       <b id="sideName">
+        Danial T.
+       </b>
+       <br/>
+       <small>
+        Career explorer
+       </small>
+      </div>
+     </div>
+    </div>
+   </aside>
+   <main class="main">
+    <div class="mobiletop">
+     skillup
+     <b>
+      .
+     </b>
+    </div>
+    <div class="topbar">
+     <div class="crumb">
+      Your workspace
+      <span style="margin:0 8px">
+       /
+      </span>
+      <b id="crumb">
+       Overview
+      </b>
+     </div>
+     <div class="rightbar">
+      <span class="chip">
+       ● Interactive demo
+      </span>
+      <button class="bell" onclick="showActivity()">
+       ♧
+      </button>
+      <div class="avatar">
+       DT
+      </div>
+     </div>
+    </div>
+    <section class="page active" id="dashboard">
+     <div class="welcome">
+      <div>
+       <div class="eyebrow">
+        YOUR CAREER WORKSPACE ✦
+       </div>
+       <h1>
+        Good to see you,
+        <span id="greeting">
+         Danial
+        </span>
+        👋
+       </h1>
+       <p class="subtitle">
+        Your next opportunity is closer than you think. Let's make it happen.
+       </p>
+      </div>
+      <button class="primary" onclick="navigate('jobs')">
+       Explore opportunities ↗
+      </button>
+     </div>
+     <div class="hero">
+      <div>
+       <div class="eyebrow">
+        YOUR CAREER, UPGRADED
+       </div>
+       <h2>
+        You're not starting from zero. You're building momentum.
+       </h2>
+       <p>
+        We've found roles that fit your potential. Discover the opportunities that could be your next big move.
+       </p>
+       <button class="primary" onclick="navigate('jobs')">
+        See your matches ↗
+       </button>
+      </div>
+      <div class="heroart">
+       <div class="orb">
+       </div>
+       <div class="floatpill fp1">
+        ✦ Discover your fit
+       </div>
+       <div class="floatpill fp2">
+        ↗ Your future looks bright
+       </div>
+      </div>
+     </div>
+     <div class="metrics">
+      <div class="metric">
+       <div class="head">
+        Job matches
+        <span class="symbol">
+         ✦
+        </span>
+       </div>
+       <div class="number" id="matchesCount">
+        6
+       </div>
+       <div class="trend">
+        ↗ Curated for you
+       </div>
+      </div>
+      <div class="metric">
+       <div class="head">
+        Applications
+        <span class="symbol">
+         ▤
+        </span>
+       </div>
+       <div class="number" id="applicationCount">
+        4
+       </div>
+       <div class="trend">
+        ↗ Keep it going
+       </div>
+      </div>
+      <div class="metric">
+       <div class="head">
+        Profile strength
+        <span class="symbol">
+         ◈
+        </span>
+       </div>
+       <div class="number" id="profileStrength">
+        60
+        <span style="font-size:17px">
+         %
+        </span>
+       </div>
+       <div class="trend">
+        ↑ Almost there!
+       </div>
+      </div>
+      <div class="metric">
+       <div class="head">
+        Interview invites
+        <span class="symbol">
+         ♧
+        </span>
+       </div>
+       <div class="number" id="interviewCount">
+        1
+       </div>
+       <div class="trend">
+        ↗ Applications in interview
+       </div>
+      </div>
+     </div>
+     <div class="grid2">
+      <div class="panel">
+       <div class="sectionhead" style="margin:0 0 8px">
+        <h2>
+         Matches made for you
+        </h2>
+        <button class="link" onclick="navigate('jobs')">
+         View all ↗
+        </button>
+       </div>
+       <p class="subtitle">
+        Opportunities worth a closer look.
+       </p>
+       <div id="dashboardJobs">
+       </div>
+      </div>
+      <div class="panel">
+       <div class="sectionhead" style="margin:0 0 8px">
+        <h2>
+         Career readiness
+        </h2>
+        <span class="match">
+         On track
+        </span>
+       </div>
+       <p class="subtitle">
+        Your journey, beautifully in progress.
+       </p>
+       <div class="progressrow">
+        <div class="labels">
+         <b>
+          Profile completeness
+         </b>
+         <span>
+          85%
+         </span>
+        </div>
+        <div class="track">
+         <div class="fill" style="width:85%">
+         </div>
+        </div>
+       </div>
+       <div class="progressrow">
+        <div class="labels">
+         <b>
+          Technical skills
+         </b>
+         <span>
+          72%
+         </span>
+        </div>
+        <div class="track">
+         <div class="fill" style="width:72%">
+         </div>
+        </div>
+       </div>
+       <div class="progressrow">
+        <div class="labels">
+         <b>
+          Interview readiness
+         </b>
+         <span>
+          60%
+         </span>
+        </div>
+        <div class="track">
+         <div class="fill" style="width:60%">
+         </div>
+        </div>
+       </div>
+       <button class="ghost" onclick="navigate('skills')" style="width:100%;margin-top:18px">
+        Explore my insights ↗
+       </button>
+      </div>
+     </div>
+    </section>
+    <section class="page" id="jobs">
+     <div class="eyebrow">
+      DISCOVER WHAT'S NEXT
+     </div>
+     <h1>
+      Find your next opportunity ✨
+     </h1>
+     <p class="subtitle">
+      Not just any job. The right job for you.
+     </p>
+     <div class="searchtools">
+      <input id="jobSearch" oninput="renderJobs()" placeholder="⌕  Search by role, company or skill..."/>
+      <select id="jobType" onchange="renderJobs()">
+       <option value="all">
+        All work modes
+       </option>
+       <option>
+        Remote
+       </option>
+       <option>
+        Hybrid
+       </option>
+       <option>
+        On-site
+       </option>
+      </select>
+      <select id="jobLevel" onchange="renderJobs()">
+       <option value="all">
+        All experience levels
+       </option>
+       <option>
+        Entry level
+       </option>
+       <option>
+        Junior
+       </option>
+      </select>
+     </div>
+     <div class="toolbarline">
+      <button class="outlinebtn" id="savedOnly" onclick="toggleSavedOnly()">
+       ☆ Saved only
+      </button>
+      <span class="smallnote" id="jobCount">
+      </span>
+     </div>
+     <div id="jobResults">
+     </div>
+    </section>
+    <section class="page" id="tracker">
+     <div class="eyebrow">
+      STAY ON TOP OF IT
+     </div>
+     <h1>
+      Application tracker
+     </h1>
+     <p class="subtitle">
+      Every application is a step forward. Move applications forward, edit their stage, or delete them.
+     </p>
+     <div class="sectionhead">
+      <h2>
+       My pipeline
+      </h2>
+      <div class="toolbarline">
+       <button class="outlinebtn" onclick="exportCSV()">
+        ↓ Export CSV
+       </button>
+       <button class="primary" onclick="addApplication()">
+        + Add application
+       </button>
+      </div>
+     </div>
+     <div class="kanban" id="kanban">
+     </div>
+     <p class="smallnote" style="margin-top:18px">
+      Changes are saved automatically in this browser.
+     </p>
+    </section>
+    <section class="page" id="skills">
+     <div class="eyebrow">
+      KNOW YOUR STRENGTHS
+     </div>
+     <h1>
+      Your skills, visualized
+     </h1>
+     <p class="subtitle">
+      Understand what you bring to the table and where to grow next.
+     </p>
+     <div class="grid2" style="margin-top:26px">
+      <div class="panel">
+       <h2>
+        Your skills overview
+       </h2>
+       <p class="subtitle">
+        Illustrative profile analysis · demo data
+       </p>
+       <div class="chart">
+        <div class="bar" style="height:90%">
+        </div>
+        <div class="bar" style="height:73%">
+        </div>
+        <div class="bar" style="height:61%">
+        </div>
+        <div class="bar" style="height:82%">
+        </div>
+        <div class="bar" style="height:49%">
+        </div>
+        <div class="bar" style="height:64%">
+        </div>
+       </div>
+       <div class="chartlabels">
+        <span>
+         Excel
+        </span>
+        <span>
+         SQL
+        </span>
+        <span>
+         Python
+        </span>
+        <span>
+         Research
+        </span>
+        <span>
+         Power BI
+        </span>
+        <span>
+         Communication
+        </span>
+       </div>
+      </div>
+      <div class="panel">
+       <h2>
+        Your growth plan ✦
+       </h2>
+       <p class="subtitle">
+        Build the skills hiring teams look for.
+       </p>
+       <div class="progressrow">
+        <div class="labels">
+         <b>
+          SQL &amp; data querying
+         </b>
+         <span>
+          73%
+         </span>
+        </div>
+        <div class="track">
+         <div class="fill" style="width:73%">
+         </div>
+        </div>
+       </div>
+       <div class="progressrow">
+        <div class="labels">
+         <b>
+          Power BI dashboards
+         </b>
+         <span>
+          49%
+         </span>
+        </div>
+        <div class="track">
+         <div class="fill" style="width:49%">
+         </div>
+        </div>
+       </div>
+       <div class="progressrow">
+        <div class="labels">
+         <b>
+          Python for analysis
+         </b>
+         <span>
+          61%
+         </span>
+        </div>
+        <div class="track">
+         <div class="fill" style="width:61%">
+         </div>
+        </div>
+       </div>
+       <button class="primary" onclick="document.getElementById('roadmap').scrollIntoView({behavior:'smooth'})">
+        ✦ My learning roadmap
+       </button>
+      </div>
+     </div>
+     <div class="panel" id="roadmap" style="margin-top:20px">
+      <h2>
+       Learning roadmap
+      </h2>
+      <p class="subtitle">
+       Mark tasks completed — progress is saved on this device.
+      </p>
+      <div id="roadmapList">
+      </div>
+      <p class="smallnote" id="roadmapProgress">
+      </p>
+     </div>
+     <div class="panel" style="margin-top:20px">
+      <h2>
+       Skills to highlight
+      </h2>
+      <p class="subtitle">
+       Your strongest signals to employers.
+      </p>
+      <div>
+       <span class="skilltag">
+        ✓ Microsoft Excel
+       </span>
+       <span class="skilltag">
+        ✓ SQL basics
+       </span>
+       <span class="skilltag">
+        ✓ Analytical thinking
+       </span>
+       <span class="skilltag">
+        ✓ Communication
+       </span>
+       <span class="skilltag">
+        ✓ Research
+       </span>
+      </div>
+     </div>
+    </section>
+    <section class="page" id="interview">
+     <div class="eyebrow">
+      CONFIDENCE IS A SKILL
+     </div>
+     <h1>
+      Interview prep studio ✦
+     </h1>
+     <p class="subtitle">
+      Practice before the big day. No pressure, just progress.
+     </p>
+     <div class="grid2" style="margin-top:26px">
+      <div class="panel">
+       <h2>
+        Practice question
+       </h2>
+       <div class="chip" style="display:inline-block;margin:10px 0 20px">
+        Junior Data Analyst · Behavioral
+       </div>
+       <h2 id="question" style="font-size:25px;line-height:1.35">
+        Tell me about a time you used data to solve a problem.
+       </h2>
+       <textarea id="answer" placeholder="Type your answer here..." style="width:100%;height:150px;border:1px solid var(--line);border-radius:12px;padding:16px;resize:vertical;font:inherit"></textarea>
+       <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+        <button class="primary" onclick="feedback()">
+         Get practice feedback ✦
+        </button>
+        <button class="ghost" onclick="nextQuestion()">
+         Next question →
+        </button>
+       </div>
+       <p class="smallnote">
+        This is rule-based practice feedback, not a live AI model.
+       </p>
+      </div>
+      <div class="panel">
+       <h2>
+        Your interview toolkit
+       </h2>
+       <p class="subtitle">
+        A little preparation goes a long way.
+       </p>
+       <div class="progressrow">
+        <b>
+         ① Structure with STAR
+        </b>
+        <p class="subtitle">
+         Situation, Task, Action, Result.
+        </p>
+       </div>
+       <div class="progressrow">
+        <b>
+         ② Be specific
+        </b>
+        <p class="subtitle">
+         Use outcomes, numbers, and real examples.
+        </p>
+       </div>
+       <div class="progressrow">
+        <b>
+         ③ Ask thoughtful questions
+        </b>
+        <p class="subtitle">
+         Show curiosity about the team and role.
+        </p>
+       </div>
+       <div id="feedback" style="background:#ecf7eb;padding:15px;border-radius:12px;font-size:13px;line-height:1.7;display:none">
+       </div>
+      </div>
+     </div>
+     <div class="panel" style="margin-top:20px">
+      <h2>
+       Practice history
+      </h2>
+      <p class="subtitle">
+       Your answers and practice scores are saved in this browser.
+      </p>
+      <div id="practiceHistory">
+      </div>
+      <button class="outlinebtn" onclick="clearPractice()" style="margin-top:14px">
+       Clear practice history
+      </button>
+     </div>
+    </section>
+    <section class="page" id="profile">
+     <div class="eyebrow">
+      ALL ABOUT YOU
+     </div>
+     <h1>
+      Build your profile
+     </h1>
+     <p class="subtitle">
+      Small updates today. Big opportunities tomorrow.
+     </p>
+     <div class="panel" style="max-width:740px;margin-top:25px">
+      <div style="display:flex;align-items:center;gap:15px;margin-bottom:28px">
+       <div class="avatar" style="height:62px;width:62px;font-size:22px">
+        DT
+       </div>
+       <div>
+        <h2 id="profileTitle" style="margin:0">
+         Danial T.
+        </h2>
+        <p class="subtitle" style="margin:0">
+         Your career journey starts here.
+        </p>
+       </div>
+      </div>
+      <div class="profileform">
+       <div>
+        <div class="fieldlabel">
+         Full name
+        </div>
+        <input class="formfield" id="profileName" value="Danial T."/>
+       </div>
+       <div>
+        <div class="fieldlabel">
+         Career goal
+        </div>
+        <input class="formfield" id="profileGoal" value="Junior Data Analyst"/>
+       </div>
+       <div>
+        <div class="fieldlabel">
+         Location
+        </div>
+        <input class="formfield" id="profileLocation" value="Almaty, Kazakhstan"/>
+       </div>
+       <div>
+        <div class="fieldlabel">
+         Preferred work style
+        </div>
+        <select class="formfield" id="profileWork">
+         <option>
+          Hybrid
+         </option>
+         <option>
+          Remote
+         </option>
+         <option>
+          On-site
+         </option>
+        </select>
+       </div>
+      </div>
+      <div style="margin-top:25px">
+       <div class="fieldlabel">
+        Your skills
+       </div>
+       <div>
+        <span class="skilltag">
+         Excel
+        </span>
+        <span class="skilltag">
+         SQL
+        </span>
+        <span class="skilltag">
+         Communication
+        </span>
+        <span class="skilltag">
+         Data visualization
+        </span>
+       </div>
+      </div>
+      <button class="primary" onclick="saveProfile()" style="margin-top:26px">
+       Save changes ↗
+      </button>
+     </div>
+    </section>
+   </main>
+  </div>
+  <div class="toast" id="toast">
+  </div>
+  <script src="script.js">
+  </script>
+ </body>
+</html>
+
